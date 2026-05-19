@@ -112,7 +112,7 @@
 
 <h1>Privacy Policy</h1>
 <p class="subtitle">Neural Breach — Cyberpunk Puzzle Game for Android</p>
-<p class="effective-date">Effective Date: May 15, 2026 &nbsp;|&nbsp; Last Updated: May 15, 2026</p>
+<p class="effective-date">Effective Date: May 15, 2026 &nbsp;|&nbsp; Last Updated: May 19, 2026</p>
 
 <!-- ======================================== -->
 <h2>1. Introduction</h2>
@@ -250,10 +250,11 @@
 </p>
 <ul>
     <li>Game progress and level completion data</li>
-    <li>Credits balance, inventory, and upgrade progress</li>
+    <li>Credits balance, inventory, and upgrade progress (including purchased themes and active theme)</li>
     <li>Achievement unlock status</li>
+    <li>Gameplay statistics such as total moves and total time played</li>
     <li>Win streak and login streak data</li>
-    <li>Story progression data</li>
+    <li>Story progression and decrypted-fragment data</li>
 </ul>
 <p>
     Cloud sync via Google Play Games Services is <strong>optional</strong>. If you do not sign in,
@@ -489,9 +490,18 @@
     </thead>
     <tbody>
         <tr>
-            <td>Local game data (progress, settings, inventory)</td>
-            <td>Stored on your device until you uninstall the App or clear App data</td>
-            <td>Uninstall App or clear data in Android Settings</td>
+            <td>Local game data (progress, settings, inventory, gameplay statistics)</td>
+            <td>Stored on your device until you erase it via in-app PURGE, uninstall
+                the App, or clear App data through Android Settings</td>
+            <td>In-app <strong>Settings → // DATA WIPE → PURGE</strong>, or uninstall /
+                clear data via Android Settings &gt; Apps &gt; Neural Breach &gt; Storage</td>
+        </tr>
+        <tr>
+            <td>App language selection</td>
+            <td>Stored by Android as a per-app language setting, outside the App's own
+                storage; persists until you change or reset it in Android settings</td>
+            <td>Android Settings &gt; Apps &gt; Neural Breach &gt; Language. Not cleared
+                by in-app PURGE.</td>
         </tr>
         <tr>
             <td>Android Auto Backup (Google Drive)</td>
@@ -501,14 +511,20 @@
         </tr>
         <tr>
             <td>Cloud save data (Google Play Games)</td>
-            <td>Stored on Google servers until you delete it or request deletion from us;
-                automatically deleted if your Google account is deleted</td>
-            <td>Google account settings, or contact us</td>
+            <td>Stored on Google servers under your Google Account until you delete it
+                through the in-app PURGE action (best-effort — requires Play Games
+                sign-in and network connectivity) or through your Google Account /
+                Play Games settings; also deleted if your Google Account itself is
+                deleted under Google's policies</td>
+            <td>In-app <strong>Settings → // DATA WIPE → PURGE</strong> (best-effort),
+                or your Google Account / Play Games settings; see our
+                <a href="data-deletion.html">Data &amp; Account Deletion</a> page,
+                Method&nbsp;B</td>
         </tr>
         <tr>
             <td>Purchase records</td>
-            <td>Retained by Google as required by applicable tax and financial regulations
-                (typically 7-10 years); see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></td>
+            <td>Retained by Google under applicable legal, accounting, tax, refund, and
+                anti-fraud obligations; see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></td>
             <td>Cannot be deleted due to legal retention obligations</td>
         </tr>
         <tr>
@@ -522,11 +538,18 @@
             <td>Stored locally on your device; updated when you change preferences</td>
             <td>In-app Settings &gt; Privacy Settings</td>
         </tr>
+        <tr>
+            <td>Privacy / data-deletion request correspondence</td>
+            <td>Email messages sent to <a href="mailto:support-komandakycto@proton.me">support-komandakycto@proton.me</a> in connection with a data-deletion or privacy request, retained as a record of compliance for up to 12 months from completion of the request, then deleted. Held in our Proton Mail inbox; we do not export or back up this correspondence to any other system.</td>
+            <td>Automatic deletion at the end of the 12-month retention period, or earlier on your request once the original deletion request has been processed</td>
+        </tr>
     </tbody>
 </table>
 <p>
-    We do not retain any personal data on our own servers. All data is either stored
-    locally on your device or processed by Google's services as described above.
+    Apart from the privacy / data-deletion request correspondence described in the last
+    row above (which is held in our Proton Mail inbox for compliance purposes), we do not
+    retain any personal data on our own servers. All other data is either stored locally
+    on your device or processed by Google's services as described in this Section.
     We will delete or anonymize data when the purpose for which it was collected has been
     fulfilled, unless a longer retention period is required by law.
 </p>
@@ -744,18 +767,25 @@
 
 <!-- ======================================== -->
 <h2>16. Data Deletion</h2>
-<p>You can delete your data through the following methods:</p>
+<p>
+    A full, step-by-step deletion guide — including the in-app one-tap PURGE flow,
+    manual Play Games deletion through your Google Account, advertising-identifier
+    reset, and an email-request pathway — is published at our dedicated
+    <a href="data-deletion.html"><strong>Data &amp; Account Deletion</strong></a>
+    page. The summary below mirrors the main options:
+</p>
 <ul>
-    <li><strong>Local data:</strong> Uninstall the App or clear the App's data through Android Settings &gt; Apps &gt; Neural Breach &gt; Storage &gt; Clear Data</li>
-    <li><strong>Android Auto Backup:</strong> Manage or delete backups through Android Settings &gt; Google &gt; Backup (or your Google Drive account)</li>
-    <li><strong>Cloud save data:</strong> Sign into Google Play Games and delete your game data through your Google account, or contact us to request deletion</li>
-    <li><strong>Advertising ID:</strong> Reset or delete your advertising ID through Android Settings &gt; Google &gt; Ads</li>
-    <li><strong>Email deletion request:</strong> Contact us at <a href="mailto:support-komandakycto@proton.me?subject=Data%20Deletion%20Request">support-komandakycto@proton.me</a> and we will process your request within 30 days</li>
+    <li><strong>Local data:</strong> Tap <strong>Settings → // DATA WIPE → PURGE</strong> inside the App, or uninstall the App / clear its data through Android Settings &gt; Apps &gt; Neural Breach &gt; Storage &gt; Clear Data.</li>
+    <li><strong>Android Auto Backup:</strong> Manage or delete backups through Android Settings &gt; Google &gt; Backup (or your Google Drive account).</li>
+    <li><strong>Cloud save data:</strong> The in-app PURGE attempts to delete the Play Games cloud-save snapshot on a best-effort basis. To remove it independently — for example, if you have already uninstalled the App or were signed out at the time of PURGE — sign in to Google Play Games and delete the data through your Google Account (see the <a href="data-deletion.html">Data &amp; Account Deletion</a> page, Method B).</li>
+    <li><strong>Advertising ID:</strong> Reset or delete your advertising ID through Android Settings &gt; Google &gt; Ads.</li>
+    <li><strong>Email deletion request:</strong> Contact us at <a href="mailto:support-komandakycto@proton.me?subject=Data%20Deletion%20Request">support-komandakycto@proton.me</a> and we will respond within 30 days (extendable by up to 60 days for complex requests). Because we operate no backend server, by email we can guide you to the correct self-service method and delete any data we control directly, but we cannot ourselves delete data that Google holds on your behalf (such as Play Games cloud saves, achievements, AdID, or Play Store purchase records).</li>
 </ul>
 <p>
-    Please note that certain data may be retained as required by applicable law (e.g., purchase
-    records for tax compliance) or for legitimate purposes (e.g., fraud prevention). We will
-    inform you if we are unable to fully comply with a deletion request and explain the reasons.
+    Please note that certain data may be retained as required by applicable law (for example,
+    purchase records for tax and accounting compliance) or for legitimate purposes (such as
+    fraud prevention). We will inform you if we are unable to fully comply with a deletion
+    request and explain the reasons.
 </p>
 
 <!-- ======================================== -->
