@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Breach — Data &amp; Account Deletion</title>
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --surface: #131820;
+            --text: #c5cdd9;
+            --heading: #e0e6ed;
+            --accent: #00e5ff;
+            --link: #00e5ff;
+            --border: #1e2630;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
+        }
+        .subtitle {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .effective-date {
+            color: #6b7a8d;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h2 {
+            color: var(--heading);
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            color: var(--heading);
+            font-size: 1.05rem;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 0.85rem; }
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol {
+            margin-bottom: 0.85rem;
+            padding-left: 1.5rem;
+        }
+        li { margin-bottom: 0.35rem; }
+        .highlight {
+            background: var(--surface);
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .summary-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .summary-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .summary-card ul {
+            margin-bottom: 0;
+        }
+        ol.steps {
+            counter-reset: step;
+            list-style: none;
+            padding-left: 0;
+        }
+        ol.steps > li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 2.25rem;
+            margin-bottom: 0.6rem;
+        }
+        ol.steps > li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            font-size: 0.93rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.55rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            color: var(--heading);
+            background: var(--surface);
+            font-weight: 600;
+        }
+        code {
+            background: var(--surface);
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: #6b7a8d;
+            font-size: 0.85rem;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #ffffff;
+                --surface: #f5f7fa;
+                --text: #374151;
+                --heading: #111827;
+                --accent: #0077b6;
+                --link: #0077b6;
+                --border: #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Data &amp; Account Deletion</h1>
+    <p class="subtitle">Neural Breach — Cyberpunk Puzzle Game for Android</p>
+    <p class="effective-date">Effective Date: May 19, 2026 &nbsp;|&nbsp; Last Updated: May 19, 2026</p>
+
+    <!-- ======================================== -->
+    <div class="summary-card">
+        <h3>How to delete your data — quick reference</h3>
+        <ul>
+            <li><strong><a href="#method-a">Method A</a></strong> — fastest: open the app and use <strong>Settings → // DATA WIPE → PURGE</strong>. Wipes local data and attempts to delete the cloud save.</li>
+            <li><strong><a href="#method-b">Method B</a></strong> — if the app is uninstalled or you were signed out: delete the Play Games cloud save through your Google Account.</li>
+            <li><strong><a href="#method-c">Method C</a></strong> — by email: <a href="mailto:support-komandakycto@proton.me?subject=Data%20Deletion%20Request">support-komandakycto@proton.me</a> (subject: <code>Data Deletion Request</code>).</li>
+            <li><strong><a href="#method-d">Method D</a></strong> — advertising identifier: reset or delete the Android AdID in OS settings.</li>
+        </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <h2>1. Overview</h2>
+    <p>
+        This page is the public data- and account-deletion endpoint for
+        <strong>Neural Breach</strong>, as required by the Google Play
+        <a href="https://support.google.com/googleplay/android-developer/answer/13327111" target="_blank" rel="noopener">User Data policy</a>.
+        Anyone can use the methods below without re-installing the app or signing in to it.
+    </p>
+    <p>
+        Neural Breach does <strong>not require account registration</strong> with us and we
+        operate no backend server of our own. Because the app does not maintain a separate
+        in-app account, deleting the data described below is equivalent to deleting your
+        in-app account. The data linked to you is held in the following locations, all
+        under third-party (Google) or device control:
+    </p>
+    <ul>
+        <li><strong>On your device</strong> — local game progress, in-game currency, inventory, and app preferences.</li>
+        <li><strong>Google Play Games Services (PGS)</strong> — only if you signed in to Play Games inside the app. Stores a cloud-save snapshot, achievement progress, and a player profile (including a player ID and display name) under your Google Account.</li>
+        <li><strong>Google Play Billing</strong> — purchase tokens and transaction records for any in-app purchases, retained by Google under its own policies.</li>
+        <li><strong>Google Mobile Ads (AdMob) and Google User Messaging Platform (UMP)</strong> — advertising identifiers and ad-interaction telemetry held by Google (controlled via your Google Account and Android settings), plus the ad-consent string. The consent string is stored locally on your device and can be reset at any time via the in-app <strong>Settings → &gt; PRIVACY SETTINGS → OPEN</strong> flow.</li>
+        <li><strong>Android OS backups</strong> — if Auto Backup is enabled, app data may be backed up by the operating system to your personal Google Drive, independently of the app.</li>
+    </ul>
+    <p>
+        For the full list of what we collect and why, see our
+        <a href="privacy-policy.html">Privacy Policy</a>.
+    </p>
+
+    <!-- ======================================== -->
+    <h2>2. What Gets Deleted</h2>
+    <p>
+        The table below summarises the main data categories and which deletion method removes
+        each. It is a summary — the Privacy Policy is the authoritative inventory.
+    </p>
+    <table>
+        <thead>
+        <tr><th>Data category</th><th>Where it lives</th><th>Deleted by</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Game progress (levels, stars, best scores)</td>
+            <td>Local Room database on your device</td>
+            <td><a href="#method-a">Method&nbsp;A</a>, or uninstall + clear app data</td>
+        </tr>
+        <tr>
+            <td>In-game credits balance, inventory, upgrade progress</td>
+            <td>Local Room database on your device</td>
+            <td><a href="#method-a">Method&nbsp;A</a></td>
+        </tr>
+        <tr>
+            <td>Gameplay statistics (total moves, time played, win streaks)</td>
+            <td>Local Room database on your device</td>
+            <td><a href="#method-a">Method&nbsp;A</a></td>
+        </tr>
+        <tr>
+            <td>App preferences (volume, CRT effect, haptics, tutorial flags)</td>
+            <td>Local DataStore on your device</td>
+            <td><a href="#method-a">Method&nbsp;A</a></td>
+        </tr>
+        <tr>
+            <td>App language selection</td>
+            <td>Android per-app language setting</td>
+            <td>Android Settings → Apps → Neural Breach → Language</td>
+        </tr>
+        <tr>
+            <td>Cloud-save snapshot (mirror of progress, credits, inventory)</td>
+            <td>Google Play Games Services</td>
+            <td><a href="#method-a">Method&nbsp;A</a> (best-effort) or <a href="#method-b">Method&nbsp;B</a></td>
+        </tr>
+        <tr>
+            <td>Play Games player ID and display name, achievement unlock status, and player-profile binding for this game</td>
+            <td>Google Play Games Services</td>
+            <td><a href="#method-b">Method&nbsp;B</a></td>
+        </tr>
+        <tr>
+            <td>Advertising identifier (AdID) and ad personalization data</td>
+            <td>Google Mobile Ads (held by Google)</td>
+            <td><a href="#method-d">Method&nbsp;D</a></td>
+        </tr>
+        <tr>
+            <td>Ad-consent status (TCF v2 / UMP consent string)</td>
+            <td>Google User Messaging Platform</td>
+            <td>In-app <strong>Settings → &gt; PRIVACY SETTINGS → OPEN</strong> (re-open the consent dialog) — see <a href="#method-d">Method&nbsp;D</a></td>
+        </tr>
+        <tr>
+            <td>Purchase tokens and transaction records (Play Billing)</td>
+            <td>Your Google Play account, held by Google</td>
+            <td>Retained by Google for legal/tax reasons — see <a href="#cannot-delete">Section&nbsp;7</a></td>
+        </tr>
+        <tr>
+            <td>Diagnostic and ad-interaction telemetry (impressions, IP, app set ID, device model)</td>
+            <td>Google AdMob (held by Google)</td>
+            <td>Controlled by Google; managed via <a href="#method-d">Method&nbsp;D</a> and the in-app consent dialog</td>
+        </tr>
+        <tr>
+            <td>Android OS backups of app data (if Auto Backup is enabled)</td>
+            <td>Your personal Google Drive (held by Google)</td>
+            <td>Android Settings → Google → Backup</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- ======================================== -->
+    <h2 id="method-a">3. Method A — One-Tap In-App PURGE (Recommended)</h2>
+    <div class="highlight">
+        <p>
+            <strong>This is the fastest way to delete the data we hold.</strong> A single
+            confirmation wipes the local database and app preferences, and best-effort
+            requests deletion of the Play Games cloud-save snapshot in the same action.
+        </p>
+    </div>
+    <ol class="steps">
+        <li>Open <strong>Neural Breach</strong> on your Android device.</li>
+        <li>From the main menu, tap the gear icon to open <strong>Settings</strong>.</li>
+        <li>Scroll to the <strong>// DATA WIPE</strong> section near the bottom. You will see a highlighted <strong>&gt; PURGE ALL DATA</strong> label.</li>
+        <li>Tap the <strong>PURGE</strong> button beneath that label. A confirmation dialog warns you that the action is irreversible.</li>
+        <li>Tap <strong>CONFIRM PURGE</strong> to proceed, or <strong>ABORT</strong> to cancel.</li>
+        <li>On confirmation, the app erases:
+            <ul>
+                <li>All level progress, stars, and best scores</li>
+                <li>Credits balance, inventory, and upgrade progress</li>
+                <li>Gameplay statistics</li>
+                <li>App preferences (audio volume, visual effects, haptics, tutorial flags)</li>
+            </ul>
+            and additionally <em>attempts</em> to delete the Play Games cloud-save snapshot.
+        </li>
+        <li>The local app state returns to a clean post-install state.</li>
+    </ol>
+    <p>
+        <strong>Cloud-save best-effort caveat.</strong> The cloud-save deletion in Method&nbsp;A
+        succeeds only when (a) you are currently signed in to Play Games inside the app,
+        (b) the device has network connectivity, and (c) there is no sync conflict on the
+        snapshot. If any of those conditions fails, the local data is still wiped but the
+        Play Games snapshot may persist. If you want to be certain that the cloud save is
+        gone, run <a href="#method-b">Method&nbsp;B</a> afterwards.
+    </p>
+    <p>
+        <strong>Not cleared by Method&nbsp;A:</strong> the app language selection (this is the
+        Android per-app language setting and lives outside the app); Play Games achievement
+        progress and player profile (use Method&nbsp;B); advertising identifier (Method&nbsp;D);
+        Play Billing purchase history retained by Google.
+    </p>
+
+    <!-- ======================================== -->
+    <h2 id="method-b">4. Method B — Delete Play Games Data via Your Google Account</h2>
+    <p>
+        Use this method to ask Google to delete the Play Games data associated with Neural
+        Breach (which may include the cloud-save snapshot, achievement progress, player
+        ID/display name, and the player-profile binding for this game). It is required if
+        you have already uninstalled the app or if you were not signed in to Play Games
+        when you used Method&nbsp;A. The scope of what is actually removed is described in
+        more detail at the end of this section.
+    </p>
+
+    <h3>4.1 On the web (recommended)</h3>
+    <ol class="steps">
+        <li>Visit <a href="https://play.google.com/games/profile" target="_blank" rel="noopener">play.google.com/games/profile</a> in any browser, signed in to the Google Account you used inside Neural Breach.</li>
+        <li>Open the <strong>Your Data</strong> section of your Play Games profile.</li>
+        <li>Choose <strong>Delete Play Games Account &amp; Data</strong>, then select the option to delete data for a single game.</li>
+        <li>Locate <strong>Neural Breach</strong> in the list and confirm deletion.</li>
+    </ol>
+
+    <h3>4.2 On Android</h3>
+    <ol class="steps">
+        <li>Open the <strong>Google Play Store</strong> app and tap your account avatar.</li>
+        <li>Go to <strong>Settings → General → Play Games Profile → Privacy &amp; Settings → Your Data</strong>.</li>
+        <li>Tap <strong>Delete profile &amp; game data</strong>. Under <strong>Delete individual game data</strong>, find <strong>Neural Breach</strong> and tap <strong>Delete</strong>.</li>
+    </ol>
+
+    <p>
+        Google's current help article is
+        <a href="https://support.google.com/googleplay/answer/9130646" target="_blank" rel="noopener">Delete your Play Games data or Play Games profile</a>.
+        Note that Google uses slightly different button labels in the two flows
+        (<em>Delete Play Games Account &amp; Data</em> on the web,
+        <em>Delete profile &amp; game data</em> on Android). Exact navigation steps may
+        also drift between Play Games versions and Android releases; if you cannot find
+        the option, follow the linked Google article for the latest path.
+    </p>
+
+    <p>
+        <strong>Scope of Method&nbsp;B.</strong> Deleting Play Games data for Neural Breach
+        removes the data Google Play Games stores in connection with this specific game —
+        which may include the cloud-save snapshot, in-game achievements, and the player
+        binding for Neural Breach. It does <em>not</em> delete your overall Google Account,
+        your Play Games profile across other games, your Web &amp; App Activity, your Play
+        Store purchase history, or any data Google holds independently of Play Games.
+    </p>
+
+    <!-- ======================================== -->
+    <h2 id="method-c">5. Method C — Deletion Request by Email</h2>
+    <p>
+        If the steps above are not practical for you — for example, you have lost access to
+        the device or to the Google Account you played the game with — you may submit a
+        deletion request by email:
+    </p>
+    <div class="highlight">
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:support-komandakycto@proton.me?subject=Data%20Deletion%20Request">support-komandakycto@proton.me</a>
+            <br>
+            <strong>Subject line:</strong> <code>Data Deletion Request</code>
+        </p>
+    </div>
+    <p>
+        To help us identify what to delete, please include in your message:
+    </p>
+    <ul>
+        <li>The Google Account email associated with the Play Games sign-in used in the app, <em>or</em> your Play Games player ID (visible in the Play Games app profile). If you used more than one account, list all of them.</li>
+        <li>The approximate date of last use, if you remember it.</li>
+        <li>A short statement that you are the owner of that account and that you authorise the deletion.</li>
+    </ul>
+
+    <h3>5.1 What we can do by email</h3>
+    <p>
+        Because Neural Breach does not operate a backend server, the developer cannot
+        directly delete data that Google stores on your behalf — including the Play Games
+        cloud-save snapshot, achievement progress, the AdID, or Play Store purchase
+        records. For those, you remain the only party with the authority to act, through
+        Method&nbsp;A, Method&nbsp;B, Method&nbsp;D, or your Google Account settings. By
+        email we can:
+    </p>
+    <ul>
+        <li>Confirm what categories of data exist and where, and guide you through the appropriate self-service method.</li>
+        <li>Delete any data that we, as the developer, control directly — for example, your message and verification correspondence — subject to the retention schedule described in <a href="#retention">Section&nbsp;8</a> (we keep request correspondence for up to 12 months as a record of compliance, or shorter on your request once the original deletion request has been processed).</li>
+        <li>Confirm that Neural Breach itself does not hold a separate developer-side copy of your data outside the locations described in Section&nbsp;1.</li>
+        <li>Where helpful, point you to Google Play support or provide the information you need to open your own Play support request (response times for that channel remain Google's, not ours).</li>
+    </ul>
+
+    <h3>5.2 Verification and timing</h3>
+    <p>
+        Because Neural Breach operates no backend server and holds no developer-side copy
+        of your in-game data, our ability to independently verify a request is limited.
+        We will reply to your request, confirm in good faith that the email account
+        contacting us is the originator, and use the information you provide to point you
+        to the correct self-service method (Method&nbsp;A, B, or D) for the data Google
+        actually holds on your behalf. We will not request government ID, your full legal
+        name, or any other information beyond what is strictly necessary, and we will not
+        ask for sensitive personal data.
+    </p>
+    <p>
+        We aim to respond to deletion requests within <strong>30 days</strong>, in line
+        with applicable data-protection law. If the request is complex, we may extend
+        this period by an additional <strong>60 days</strong> and will inform you of the
+        extension within the initial 30-day period. These commitments are made with
+        reference to, and are intended to be consistent with:
+    </p>
+    <ul>
+        <li>EU/UK General Data Protection Regulation, Articles 12 and 17 (transparency of procedure and the right to erasure).</li>
+        <li>California Consumer Privacy Act / California Privacy Rights Act, California Civil Code §§1798.105 and 1798.130 (right to delete and operative procedures).</li>
+    </ul>
+    <p>
+        Where mandatory local law sets a stricter or different timeline, that local law
+        prevails.
+    </p>
+
+    <!-- ======================================== -->
+    <h2 id="method-d">6. Method D — Advertising Identifier &amp; Ad Personalization</h2>
+    <p>
+        The app uses Google Mobile Ads (AdMob) to show interstitial and rewarded
+        advertisements. AdMob may use the Android advertising identifier (AdID) tied to
+        your device. To reset or delete this identifier:
+    </p>
+    <ol class="steps">
+        <li>Open <strong>Android Settings</strong>. Menu paths vary slightly across Android versions and device manufacturers.</li>
+        <li>Navigate to one of: <strong>Google → Ads</strong>, <strong>Privacy → Ads</strong>, or <strong>Security &amp; Privacy → Privacy → Ads</strong>.</li>
+        <li>Tap <strong>Delete advertising ID</strong> (on Android 12 and later) or <strong>Reset advertising ID</strong> on older versions.</li>
+        <li>Optionally enable <strong>Opt out of Ads Personalization</strong>.</li>
+    </ol>
+    <p>
+        You can also re-open the in-app ad-consent dialog at any time via
+        <strong>Settings → Privacy Settings</strong> inside Neural Breach to withdraw
+        consent or change your choice.
+    </p>
+
+    <!-- ======================================== -->
+    <h2 id="cannot-delete">7. Data We Cannot Delete</h2>
+    <p>
+        Some data is held by Google or other third parties under their own policies, not by
+        us, and cannot be erased through any of the methods above:
+    </p>
+    <ul>
+        <li>
+            <strong>Google Play Store purchase history.</strong> Records of in-app purchases
+            (price, date, order ID, purchase token) are retained by Google under
+            applicable legal, accounting, tax, refund, and anti-fraud obligations. You
+            can review them at
+            <a href="https://play.google.com/store/account/orderhistory" target="_blank" rel="noopener">play.google.com/store/account/orderhistory</a>.
+            Refunds, where eligible, are handled by Google under the
+            <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play refund policy</a>.
+        </li>
+        <li>
+            <strong>Aggregated, anonymised, or de-identified analytics</strong> that can no
+            longer be linked back to you.
+        </li>
+        <li>
+            <strong>Backups Google or your device OS may have made independently of our
+            app</strong> — for example, Android Auto Backup to your personal Google Drive.
+            Manage or remove these in <strong>Android Settings → Google → Backup</strong>.
+        </li>
+        <li>
+            <strong>Your overall Google Account, Web &amp; App Activity, or device-level
+            Google services.</strong> Manage these directly in your Google Account at
+            <a href="https://myaccount.google.com/" target="_blank" rel="noopener">myaccount.google.com</a>.
+        </li>
+    </ul>
+
+    <!-- ======================================== -->
+    <h2 id="retention">8. Retention Periods</h2>
+    <ul>
+        <li><strong>Local data on your device:</strong> retained until you purge it in-app, clear app storage, or uninstall the app. We have no access to it.</li>
+        <li><strong>Play Games cloud-save snapshot:</strong> stored by Google under your Google Account until you delete it (Method&nbsp;A or Method&nbsp;B), or until your Google Account itself is deleted under Google's account-data policies.</li>
+        <li><strong>Email deletion requests (Method&nbsp;C):</strong> processed within 30 days of receipt, extendable by up to 60 days for complex requests, in line with the timeline stated in our <a href="privacy-policy.html">Privacy Policy</a>. We retain the request correspondence for up to 12 months as a record of compliance and then delete it.</li>
+        <li><strong>Play Store purchase records:</strong> retained by Google under its own policies for as long as required by applicable tax, accounting, refund, and anti-fraud rules.</li>
+    </ul>
+
+    <!-- ======================================== -->
+    <h2>9. Contact</h2>
+    <p>
+        For any question about this deletion procedure, or to submit a deletion request,
+        contact:
+    </p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:support-komandakycto@proton.me">support-komandakycto@proton.me</a></li>
+        <li><strong>Developer:</strong> Leonid Korsakov (Individual Entrepreneur, Georgia)</li>
+        <li><strong>Privacy Policy:</strong> <a href="privacy-policy.html">privacy-policy.html</a></li>
+        <li><strong>Terms of Service:</strong> <a href="terms-of-service.html">terms-of-service.html</a></li>
+    </ul>
+
+    <div class="footer">
+        &copy; 2026 Leonid Korsakov. Neural Breach is a cyberpunk puzzle game for Android.
+    </div>
+</div>
+</body>
+</html>
